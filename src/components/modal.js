@@ -22,6 +22,7 @@ const Modal = ({ isOpen, onClose, foodItem }) => {
             />
             <h2>{foodItem.strMeal}</h2>
             <p>Category: {foodItem.strCategory}</p>
+            <p>Ingredients: {foodItem.ingredients}</p>
           </>
         )}
       </div>
