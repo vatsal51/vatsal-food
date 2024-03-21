@@ -138,7 +138,7 @@ header {
   width: 90%;
   max-width: 1000px;
   margin: auto;
-  height: 350px;
+  height: 365px;
   z-index: 9999;
   border-radius: 16px;
   z-index: 11;
@@ -458,7 +458,7 @@ footer {
   padding-left: 20%;
   top: 0;
   z-index: -1;
-  overflow: scroll;
+  overflow-y: scroll;
   height: 100%;
 }
 .tabs .content ul {
