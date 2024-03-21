@@ -1,32 +1,33 @@
 import React from "react";
 import close from "../cross-circle-svgrepo-com.svg";
-const Modal = ({ isOpen, onClose, foodItem }) => {
-  const modalClass = isOpen ? "modal show" : "modal"; // Add the "show" class if isOpen is true
-
-  const handleClose = () => {
-    onClose();
-  };
+import { useFoodContext } from "./foodContext/foodContext";
+const Modal = () => {
+  const { selectedFoodItem, handleFoodItemClick } = useFoodContext();
+  const modalClass = selectedFoodItem ? "modal show" : "modal"; 
 
   return (
-    <div className={modalClass}>
-      <div className="modal-content">
-        <span className="close" onClick={handleClose}>
-          <img src={close}></img>
-        </span>
-        {foodItem && (
-          <>
-            <img
-              src={foodItem.strMealThumb}
-              className="modal-img"
-              alt={foodItem.strMeal}
-            />
-            <h2>{foodItem.strMeal}</h2>
-            <p>Category: {foodItem.strCategory}</p>
-            <p>Ingredients: {foodItem.ingredients}</p>
-          </>
-        )}
+    <>
+      <div className={modalClass}>
+        <div className="modal-content">
+          <span className="close" onClick={() => handleFoodItemClick()}>
+            <img src={close} alt="close button"></img>
+          </span>
+          {selectedFoodItem && (
+            <>
+              <img
+                src={selectedFoodItem.strMealThumb}
+                className="modal-img"
+                alt={selectedFoodItem.strMeal}
+              />
+              <h2>{selectedFoodItem.strMeal}</h2>
+              <p>Category: {selectedFoodItem.strCategory}</p>
+              <p>Ingredients: {selectedFoodItem.ingredients}</p>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+      <div className="modal-overlay"></div>
+    </>
   );
 };
 

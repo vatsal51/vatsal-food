@@ -1,68 +1,16 @@
-import React, { useState, useEffect } from "react";
 import ascending from "../ascending-a-z-solid-svgrepo-com.svg";
 import descending from "../descending-z-a-solid-svgrepo-com.svg";
-const Filters = ({
-  setFoodItems,
-  foodItems,
-  sortAscending,
-  sortDescending,
-  getRandomRating,
-  setActiveTab,
-  setCurrentPage,
-}) => {
-  const [selectedArea, setSelectedArea] = useState("");
-  const [areas, setAreas] = useState([]);
-
-  const handleTabClick = (index) => {
-    setActiveTab(index);
-  };
-  useEffect(() => {
-    const fetchAreas = async () => {
-      try {
-        const response = await fetch(
-          "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-        );
-        const data = await response.json();
-        setAreas(data.meals.map((meal) => meal.strArea));
-      } catch (error) {
-        console.error("Error fetching areas:", error);
-      }
-    };
-
-    fetchAreas();
-  }, []);
-
-  const toggleDropdown = () => {
-    const dropdown = document.querySelector(".dropdown");
-    dropdown.classList.toggle("show");
-  };
-
-  const handleAreaChange = (event) => {
-    setSelectedArea(event.target.value);
-  };
-
-  const applyFilter = async () => {
-    try {
-      const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?a=${encodeURIComponent(
-          selectedArea
-        )}`
-      );
-      const data = await response.json();
-
-      const meals = data.meals || [];
-      // Generate random ratings for the filtered meals using the prop function
-      const mealsWithRandomRating = meals.map((meal) => ({
-        ...meal,
-        rating: getRandomRating(3.1, 5.0),
-      }));
-      setFoodItems(mealsWithRandomRating);
-      setCurrentPage(1); // Set the current page number to 1
-    } catch (error) {
-      console.error("Error fetching food items:", error);
-    }
-    toggleDropdown(); // Hide dropdown after applying filter
-  };
+import { useFoodContext } from "./foodContext/foodContext";
+const Filters = () => {
+  const {
+    sortAscending,
+    sortDescending,
+    toggleDropdown,
+    areas,
+    selectedArea,
+    handleAreaChange,
+    applyFilter,
+  } = useFoodContext(); 
 
   return (
     <div className="container">
@@ -94,13 +42,13 @@ const Filters = ({
           <div className="filter-tag" onClick={sortAscending}>
             Sort
             <span className="filters">
-              <img src={ascending}></img>
+              <img src={ascending} alt="ascending sort icon"></img>
             </span>
           </div>
           <div className="filter-tag" onClick={sortDescending}>
             Sort
             <span className="filters">
-              <img src={descending}></img>
+              <img src={descending} alt="desceding sort icon"></img>
             </span>
           </div>
         </div>
@@ -131,7 +79,7 @@ const Filters = ({
                 type="radio"
                 name="tabs"
                 id="tab1"
-                checked
+                defaultChecked
               />
               <label htmlFor="tab1">
                 <h3>Filter by Area</h3>

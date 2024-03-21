@@ -1,12 +1,8 @@
 import React from "react";
-
-const FoodItem = ({ id, name, image, rating, onClick }) => {
-  const handleFoodItemClick = () => {
-    onClick(id); // Pass the id of the clicked food item to the parent component
-  };
+const FoodItem = ({ id, name, image, rating, handleFoodItemClick }) => {
 
   return (
-    <div className="food-item" onClick={handleFoodItemClick}>
+    <div className="food-item" key={id} onClick={()=>handleFoodItemClick(id)}>
       <div className="food-wrapper">
         <div className="food-img">
           <img src={image} alt={name} />
@@ -51,7 +47,7 @@ const FoodItem = ({ id, name, image, rating, onClick }) => {
                 </defs>
               </svg>
             </span>
-            <span> Ratings: {rating}</span>
+            <span>{rating}</span>
           </p>
         </div>
       </div>
