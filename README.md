@@ -5,17 +5,18 @@ To set up the project, you can use either npm or yarn to install the required de
 ```
 npm install
 or
-
 yarn install
 ```
 
 Usage
 After installing the dependencies, you can start the development server by running:
 
+```
 npm start
 or
-
 yarn start
+```
+
 This will run the app in development mode. Open http://localhost:3000 in your web browser to view the application.
 
 # Food Menu App
