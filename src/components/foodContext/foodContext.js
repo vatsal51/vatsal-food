@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const FoodContext = createContext();
@@ -33,21 +32,21 @@ export const FoodProvider = ({ children }) => {
     }
   }, [foodItems]);
 
-    useEffect(() => {
-      const fetchAreas = async () => {
-        try {
-          const response = await fetch(
-            "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-          );
-          const data = await response.json();
-          setAreas(data.meals.map((meal) => meal.strArea));
-        } catch (error) {
-          console.error("Error fetching areas:", error);
-        }
-      };
+  useEffect(() => {
+    const fetchAreas = async () => {
+      try {
+        const response = await fetch(
+          "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+        );
+        const data = await response.json();
+        setAreas(data.meals.map((meal) => meal.strArea));
+      } catch (error) {
+        console.error("Error fetching areas:", error);
+      }
+    };
 
-      fetchAreas();
-    }, []);
+    fetchAreas();
+  }, []);
 
   function getRandomRating(min, max) {
     return (Math.random() * (max - min) + min).toFixed(2);
@@ -123,7 +122,7 @@ export const FoodProvider = ({ children }) => {
       const data = await response.json();
 
       const meals = data.meals || [];
-      // Generate random ratings for the filtered meals 
+      // Generate random ratings for the filtered meals
       const mealsWithRandomRating = meals.map((meal) => ({
         ...meal,
         rating: getRandomRating(3.1, 5.0),

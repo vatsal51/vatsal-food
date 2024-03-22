@@ -1,8 +1,7 @@
 import React from "react";
 const FoodItem = ({ id, name, image, rating, handleFoodItemClick }) => {
-
   return (
-    <div className="food-item" key={id} onClick={()=>handleFoodItemClick(id)}>
+    <div className="food-item" key={id} onClick={() => handleFoodItemClick(id)}>
       <div className="food-wrapper">
         <div className="food-img">
           <img src={image} alt={name} />
