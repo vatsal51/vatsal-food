@@ -17,11 +17,10 @@ const FoodMenuPage = () => {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = foodItems.slice(indexOfFirstItem, indexOfLastItem);
-  
 
   return (
     <div className="food-menu">
-      <h1>Indian Food Menu</h1>
+      <h1>Food Menu</h1>
       <Filters />
       <div className="container">
         <div className="food-items">
@@ -36,6 +35,7 @@ const FoodMenuPage = () => {
             />
           ))}
         </div>
+      </div>
         {foodItems.length > 8 ? (
           <Pagination
             prevPage={prevPage}
@@ -47,7 +47,6 @@ const FoodMenuPage = () => {
         ) : (
           ""
         )}
-      </div>
       <Modal />
     </div>
   );

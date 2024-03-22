@@ -20,8 +20,8 @@ const Modal = () => {
                 alt={selectedFoodItem.strMeal}
               />
               <h2>{selectedFoodItem.strMeal}</h2>
-              <p>Category: {selectedFoodItem.strCategory}</p>
-              <p>Ingredients: {selectedFoodItem.ingredients}</p>
+              <p><span>Category:</span> {selectedFoodItem.strCategory}</p>
+              <p><span>Ingredients:</span> {selectedFoodItem.ingredients}</p>
             </>
           )}
         </div>

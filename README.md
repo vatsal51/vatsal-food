@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+## Project Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npm install
 
-## Available Scripts
+# or
 
-In the project directory, you can run:
+yarn install
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm start
+# or
+yarn start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Food Menu App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is a React-based food menu application that allows users to browse through a list of food items, view details of individual items, apply filters, and sort the items.
 
-### `npm run build`
+## Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Introduction
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Food Menu App is a web application built using React. It leverages context API for state management and makes use of external APIs to fetch food data. The app provides a user-friendly interface for browsing food items, exploring their details, and applying filters based on area.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Browsing Food Items:** Users can browse through a list of food items fetched from an external API.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Viewing Item Details:** Clicking on a food item displays its details in a modal, including image, name, and ingredients.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Applying Filters:** Users can filter food items by area, such as Indian, Italian, etc., using the dropdown filter.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Sorting Items:** The app allows users to sort food items in ascending or descending order based on their names.
 
-## Learn More
+- **Pagination:** If the list of food items exceeds a certain limit, pagination is provided for easy navigation.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project follows a modular structure, with separate components for different functionalities:
 
-### Code Splitting
+- **FoodMenuPage:** The main component responsible for rendering the food menu interface, including filters, food items, and pagination.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Filters:** A component for applying filters to the list of food items based on area.
 
-### Analyzing the Bundle Size
+- **FoodItem:** Represents a single food item card displayed in the menu.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Modal:** Displays detailed information about a selected food item in a modal dialog.
 
-### Making a Progressive Web App
+- **Pagination:** Provides pagination controls for navigating through the list of food items.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **FoodContext:** Context provider for managing global state related to food items, including fetching data from APIs and managing filters.
 
-### Advanced Configuration
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To run this project locally, follow these steps:
 
-### Deployment
+1. Clone the repository to your local machine:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   git clone https://github.com/vatsal51/vatsal-Frontend-Developer.git
+   ```

@@ -10,14 +10,14 @@ const Filters = () => {
     selectedArea,
     handleAreaChange,
     applyFilter,
-  } = useFoodContext(); 
+  } = useFoodContext();
 
   return (
     <div className="container">
       <div className="filters">
         <div className="filter-wrapper">
           <div className="filter-tag" onClick={toggleDropdown}>
-            Filter
+            <span> Filter</span>
             <span className="filters">
               <svg
                 width="16"
@@ -40,13 +40,13 @@ const Filters = () => {
           </div>
 
           <div className="filter-tag" onClick={sortAscending}>
-            Sort
+            <span> Sort</span>
             <span className="filters">
               <img src={ascending} alt="ascending sort icon"></img>
             </span>
           </div>
           <div className="filter-tag" onClick={sortDescending}>
-            Sort
+            <span>Sort</span>
             <span className="filters">
               <img src={descending} alt="desceding sort icon"></img>
             </span>
