@@ -1,17 +1,22 @@
 ## Project Setup
 
-npm install
+To set up the project, you can use either npm or yarn to install the required dependencies:
 
-# or
+```
+npm install
+or
 
 yarn install
+```
 
-## Usage
+Usage
+After installing the dependencies, you can start the development server by running:
 
 npm start
-# or
-yarn start
+or
 
+yarn start
+This will run the app in development mode. Open http://localhost:3000 in your web browser to view the application.
 
 # Food Menu App
 
@@ -66,5 +71,5 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/vatsal51/vatsal-Frontend-Developer.git
+   git clone https://github.com/vatsal51/vatsal-frontend.git
    ```
