@@ -1,5 +1,5 @@
-import ascending from "../ascending-a-z-solid-svgrepo-com.svg";
-import descending from "../descending-z-a-solid-svgrepo-com.svg";
+import ascending from "../assets/ascending-a-z-solid-svgrepo-com.svg";
+import descending from "../assets/descending-z-a-solid-svgrepo-com.svg";
 import { useFoodContext } from "./foodContext/foodContext";
 const Filters = () => {
   const {

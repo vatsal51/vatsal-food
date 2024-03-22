@@ -6,12 +6,15 @@ const Pagination = ({
   currentPage,
   totalItems,
   itemsPerPage,
+  setCurrentPage,
 }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
-
+  const goToPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <div className="pagination">
       <button
@@ -40,7 +43,7 @@ const Pagination = ({
       {pageNumbers.map((number) => (
         <button
           key={number}
-          onClick={prevPage}
+          onClick={() => goToPage(number)}
           className={currentPage === number ? "active" : ""}
         >
           {number}

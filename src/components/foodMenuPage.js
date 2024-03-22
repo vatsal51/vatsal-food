@@ -7,6 +7,7 @@ const FoodMenuPage = () => {
   const {
     foodItems,
     currentPage,
+    setCurrentPage,
     itemsPerPage,
     handleFoodItemClick,
     prevPage,
@@ -36,17 +37,18 @@ const FoodMenuPage = () => {
           ))}
         </div>
       </div>
-        {foodItems.length > 8 ? (
-          <Pagination
-            prevPage={prevPage}
-            nextPage={nextPage}
-            currentPage={currentPage}
-            totalItems={foodItems.length}
-            itemsPerPage={itemsPerPage}
-          />
-        ) : (
-          ""
-        )}
+      {foodItems.length > 8 ? (
+        <Pagination
+          prevPage={prevPage}
+          nextPage={nextPage}
+          currentPage={currentPage}
+          totalItems={foodItems.length}
+          itemsPerPage={itemsPerPage}
+          setCurrentPage={setCurrentPage}
+        />
+      ) : (
+        ""
+      )}
       <Modal />
     </div>
   );

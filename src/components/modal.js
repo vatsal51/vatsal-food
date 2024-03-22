@@ -1,5 +1,5 @@
 import React from "react";
-import close from "../cross-circle-svgrepo-com.svg";
+import close from "../assets/cross-circle-svgrepo-com.svg";
 import { useFoodContext } from "./foodContext/foodContext";
 const Modal = () => {
   const { selectedFoodItem, handleFoodItemClick } = useFoodContext();

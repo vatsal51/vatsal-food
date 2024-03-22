@@ -139,6 +139,7 @@ export const FoodProvider = ({ children }) => {
     foodItems,
     selectedFoodItem,
     currentPage,
+    setCurrentPage,
     itemsPerPage,
     handleFoodItemClick,
     nextPage,
