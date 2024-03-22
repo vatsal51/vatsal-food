@@ -1,3 +1,13 @@
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/vatsal51/vatsal-frontend.git
+   ```
+
 ## Project Setup
 
 To set up the project, you can use either npm or yarn to install the required dependencies:
@@ -65,12 +75,3 @@ The project follows a modular structure, with separate components for different 
 
 - **FoodContext:** Context provider for managing global state related to food items, including fetching data from APIs and managing filters.
 
-## Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository to your local machine:
-
-   ```bash
-   git clone https://github.com/vatsal51/vatsal-frontend.git
-   ```
