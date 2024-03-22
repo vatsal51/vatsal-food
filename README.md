@@ -1,3 +1,18 @@
+# Food Menu App
+
+This project is a React-based food menu application that allows users to browse through a list of food items, view details of individual items, apply filters, and sort the items.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Features](#features)
+- [Project Structure](#project-structure)
+
+## Introduction
+
+The Food Menu App is a web application built using React. It leverages context API for state management and makes use of external APIs to fetch food data. The app provides a user-friendly interface for browsing food items, exploring their details, and applying filters based on area.
+
 ## Installation
 
 To run this project locally, follow these steps:
@@ -29,23 +44,6 @@ yarn start
 
 This will run the app in development mode. Open http://localhost:3000 in your web browser to view the application.
 
-# Food Menu App
-
-This project is a React-based food menu application that allows users to browse through a list of food items, view details of individual items, apply filters, and sort the items.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-The Food Menu App is a web application built using React. It leverages context API for state management and makes use of external APIs to fetch food data. The app provides a user-friendly interface for browsing food items, exploring their details, and applying filters based on area.
 
 ## Features
 
