@@ -55,6 +55,7 @@ export const FoodProvider = ({ children }) => {
   const handleFoodItemClick = async (id) => {
     if (!id) {
       setSelectedFoodItem(null);
+      return;
     }
     try {
       const response = await fetch(

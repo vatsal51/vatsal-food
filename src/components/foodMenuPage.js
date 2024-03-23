@@ -25,16 +25,20 @@ const FoodMenuPage = () => {
       <Filters />
       <div className="container">
         <div className="food-items">
-          {currentItems.map((foodItem) => (
-            <FoodItem
-              key={foodItem.idMeal}
-              id={foodItem.idMeal}
-              name={foodItem.strMeal}
-              image={foodItem.strMealThumb}
-              handleFoodItemClick={handleFoodItemClick}
-              rating={foodItem.rating}
-            />
-          ))}
+          {foodItems.length > 0 ? (
+            currentItems.map((foodItem) => (
+              <FoodItem
+                key={foodItem.idMeal}
+                id={foodItem.idMeal}
+                name={foodItem.strMeal}
+                image={foodItem.strMealThumb}
+                handleFoodItemClick={handleFoodItemClick}
+                rating={foodItem.rating}
+              />
+            ))
+          ) : (
+            <Loading /> // Wrapped Loading component in curly braces
+          )}
         </div>
       </div>
       {foodItems.length > 8 ? (
@@ -53,5 +57,9 @@ const FoodMenuPage = () => {
     </div>
   );
 };
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
+}
 
 export default FoodMenuPage;
