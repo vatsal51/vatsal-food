@@ -21,8 +21,8 @@ header{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .rating{font-weight:700;font-size:16px;line-height:19px;letter-spacing:-.3px;color:rgba(2,6,12,.75);margin:0}
 .rating span{display:inline-block}
 .rating svg{vertical-align:sub;margin-right:5px}
-.dropdown{text-align:right;width:90%;max-width:1000px;margin:auto;height:365px;z-index:9999;border-radius:16px;z-index:11;position:fixed;left:0;right:0;color:#282c3f;overflow-y:auto;background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.1) 0 -4px 16px}
-.dropdown-shadow{position:fixed;top:0;left:0;bottom:0;width:100%;z-index:9998;backface-visibility:hidden;opacity:.6;background:#282c3f;z-index:1}
+.dropdown{text-align:right;width:90%;max-width:1000px;margin:auto;height:365px;z-index:9999;border-radius:16px;z-index:11;position:fixed;left:0;right:0;color:#282c3f;overflow-y:auto;background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.1) 0 -4px 16px;display:none}
+.dropdown.show+.dropdown-shadow{position:fixed;top:0;left:0;bottom:0;width:100%;z-index:9998;backface-visibility:hidden;opacity:.6;background:#282c3f;z-index:1}
 .dropdown .dropdown-close{display:flex;align-items:center;justify-content:center;position:absolute;top:19px;right:19px;height:27px;width:27px;border-radius:20px;background:#fff;box-shadow:rgba(0,0,0,.12) 0 2px 6px;border:none;cursor:pointer;z-index:5}
 .dropdown-header{border-bottom:1px solid #f0f0f5;text-align:left;margin:0;padding:24px 12px 12px;font-size:24px;line-height:28px;letter-spacing:-.4px;color:rgba(2,6,12,.75)}
 .modal{width:100%;max-width:500px;z-index:1001;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:5px;background:#fff;box-shadow:0 2px 10px 0 rgba(0,0,0,.15);max-width:90%;padding:16px 16px 24px;border-radius:12px;width:400px;display:none}

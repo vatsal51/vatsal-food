@@ -12,7 +12,7 @@ const Filters = () => {
     handleAreaChange,
     applyFilter,
   } = useFoodContext();
-
+  const dropdownClass = isDropdownVisible ? "dropdown show" : "dropdown";
   return (
     <div className="container">
       <div className="filters">
@@ -53,74 +53,71 @@ const Filters = () => {
             </span>
           </div>
         </div>
-        {isDropdownVisible && (
-          <>
-            <div className="dropdown">
-              <button className="dropdown-close" onClick={toggleDropdown}>
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.75729 1.75736L5.99993 6M10.2426 10.2426L5.99993 6M5.99993 6L10.2426 1.75736M5.99993 6L1.75729 10.2426"
-                    stroke="#02060C"
-                    strokeOpacity="0.6"
-                    strokeWidth="2.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </button>
-              <h3 className="dropdown-header">Filter</h3>
-              <ul className="dropdown-content tabs">
-                <li className="tab">
-                  <input
-                    className="radioClass"
-                    type="radio"
-                    name="tabs"
-                    id="tab1"
-                    defaultChecked
-                  />
-                  <label htmlFor="tab1">
-                    <h3>Filter by Area</h3>
-                  </label>
-                  <div className="content filter-master">
-                    <ul>
-                      {areas.map((area, index) => (
-                        <li key={index}>
-                          <label htmlFor={area}>
-                            <input
-                              type="radio"
-                              value={area}
-                              checked={selectedArea === area}
-                              onChange={handleAreaChange}
-                              id={area}
-                            />
-                            <span> {area}</span>
-                          </label>
-                        </li>
-                      ))}
-                      {selectedArea && (
-                        <div>
-                          <button
-                            className="dropdown-apply"
-                            onClick={applyFilter}
-                          >
-                            Apply
-                          </button>
-                        </div>
-                      )}
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="dropdown-shadow"></div>
-          </>
-        )}
+        {/* {isDropdownVisible && ( */}
+        {/* // <> */}
+        <div className={dropdownClass}>
+          <button className="dropdown-close" onClick={toggleDropdown}>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75729 1.75736L5.99993 6M10.2426 10.2426L5.99993 6M5.99993 6L10.2426 1.75736M5.99993 6L1.75729 10.2426"
+                stroke="#02060C"
+                strokeOpacity="0.6"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </button>
+          <h3 className="dropdown-header">Filter</h3>
+          <ul className="dropdown-content tabs">
+            <li className="tab">
+              <input
+                className="radioClass"
+                type="radio"
+                name="tabs"
+                id="tab1"
+                defaultChecked
+              />
+              <label htmlFor="tab1">
+                <h3>Filter by Area</h3>
+              </label>
+              <div className="content filter-master">
+                <ul>
+                  {areas.map((area, index) => (
+                    <li key={index}>
+                      <label htmlFor={area}>
+                        <input
+                          type="radio"
+                          value={area}
+                          checked={selectedArea === area}
+                          onChange={handleAreaChange}
+                          id={area}
+                        />
+                        <span> {area}</span>
+                      </label>
+                    </li>
+                  ))}
+                  {selectedArea && (
+                    <div>
+                      <button className="dropdown-apply" onClick={applyFilter}>
+                        Apply
+                      </button>
+                    </div>
+                  )}
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div className="dropdown-shadow"></div>
+        {/* </> */}
+        {/* )} */}
       </div>
     </div>
   );
