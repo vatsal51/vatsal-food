@@ -9,6 +9,7 @@ export const FoodProvider = ({ children }) => {
   const [itemsPerPage] = useState(8);
   const [selectedArea, setSelectedArea] = useState("");
   const [areas, setAreas] = useState([]);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   useEffect(() => {
     if (foodItems.length === 0) {
@@ -105,8 +106,7 @@ export const FoodProvider = ({ children }) => {
   };
 
   const toggleDropdown = () => {
-    const dropdown = document.querySelector(".dropdown");
-    dropdown.classList.toggle("show");
+    setIsDropdownVisible(!isDropdownVisible);
   };
 
   const handleAreaChange = (event) => {
@@ -151,6 +151,7 @@ export const FoodProvider = ({ children }) => {
     toggleDropdown,
     handleAreaChange,
     applyFilter,
+    isDropdownVisible,
   };
 
   return <FoodContext.Provider value={value}>{children}</FoodContext.Provider>;
